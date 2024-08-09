@@ -99,7 +99,7 @@ static int open_db_file(fdb_db_t db, uint32_t addr, bool clean)
         }
         if (clean) {
             /* clean the old file */
-            int clean_fd = open(path, O_RDWR | O_CREAT | O_TRUNC, 0777);
+            int clean_fd = open(path, O_RDWR | O_CREAT, 0777);
             if (clean_fd <= 0) {
                 FDB_INFO("Error: open (%s) file failed.\n", path);
             }
